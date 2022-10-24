@@ -86,22 +86,6 @@ form.filters-form {
 
 }
 
-  form.filters-form input,
-  form.filters-form select,
-  form.filters-form select option {
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
-
-    width: 160px;
-    height: 36px;
-    margin: 0 12px 0 0;
-
-    text-align: center;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
 table.table-transactions {
   font-size: 12px;
 }

@@ -76,10 +76,10 @@ class PageController extends BaseController {
     if($fromDateDT) $params['fromDate'] = $fromDateDT->format('Y-m-d');
     if($toDateDT) $params['toDate'] = $toDateDT->format('Y-m-d');
     if($request->input('operation')) $params['operation'] = $request->input('operation');
-    if($request->input('payment_method')) $params['paymentMethod'] = $request->input('payment_method');
-    if($request->input('error_code')) $params['errorCode'] = $request->input('error_code');
-    if($request->input('filter_field')) $params['filterField'] = $request->input('filter_field');
-    if($request->input('filter_value')) $params['filterValue'] = $request->input('filter_value');
+    if($request->input('paymentMethod')) $params['paymentMethod'] = $request->input('paymentMethod');
+    if($request->input('errorCode')) $params['errorCode'] = $request->input('errorCode');
+    if($request->input('filterField')) $params['filterField'] = $request->input('filterField');
+    if($request->input('filterValue')) $params['filterValue'] = $request->input('filterValue');
     if($request->input('status')) $params['status'] = $request->input('status');
     
     try {
@@ -91,14 +91,61 @@ class PageController extends BaseController {
       $this->vData['error'] = $exception->getMessage();
     }
 
+    $filterOptions = [
+      'operation' => [
+        'DIRECT',
+        'REFUND',
+        '3D',
+        '3DAUTH',
+        'STORED'
+      ],
+      'paymentMethod' => [
+        'CREDITCARD',
+        'CUP',
+        'IDEAL',
+        'GIROPAY',
+        'MISTERCASH',
+        'STORED',
+        'PAYTOCARD',
+        'CEPBANK',
+        'CITADEL'
+      ],
+      'errorCode' => [
+        'Do not honor',
+        'Invalid Transaction',
+        'Invalid Card',
+        'Not sufficient funds',
+        'Incorrect PIN',
+        'Invalid country association',
+        'Currency not allowed',
+        '3-D Secure Transport Error',
+        'Transaction not permitted to cardholder'
+      ],
+      'filterField' => [
+        'Transaction UUID',
+        'Customer Email',
+        'Reference No',
+        'Custom Data',
+        'Card PAN'
+      ],
+      'status' => [
+        'APPROVED',
+        'WAITING',
+        'DECLINED',
+        'ERROR' 
+      ]
+    ];
+
+    $this->vData['filterOptions'] = $filterOptions;
+
     $initialValues = [
       'fromDate' => $fromDateDT->format('d/m/Y'),
       'toDate' => $toDateDT->format('d/m/Y'),
       'operation' => $request->input('operation'),
-      'paymentMethod' => $request->input('payment_method'),
-      'errorCode' => $request->input('error_code'),
-      'filterField' => $request->input('filter_field'),
-      'filterValue' => $request->input('filter_value'),
+      'paymentMethod' => $request->input('paymentMethod'),
+      'errorCode' => $request->input('errorCode'),
+      'filterField' => $request->input('filterField'),
+      'filterValue' => $request->input('filterValue'),
       'status' => $request->input('status'),
     ];
 
