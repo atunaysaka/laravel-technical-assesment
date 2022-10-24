@@ -1,0 +1,125 @@
+html, body {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+.vh-aligner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  background: #FBFBFB;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5); 
+  
+  height: 50px;
+
+  margin: 0 0 0 0;
+}
+
+  .navbar a.brand {
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navbar ul.navbar-nav {
+    display: inline-block;
+    
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    list-style: none;
+  }
+
+    .navbar ul.navbar-nav li.nav-item {
+      display: inline-block;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333333;
+    }
+
+      .navbar ul.navbar-nav li.nav-item a.nav-link:hover {
+        font-weight: 500;
+      }
+
+.login-form {
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5); 
+  width: 100%;
+  max-width: 360px;
+  margin: 0 0 0 0;
+  padding: 40px 40px 40px 40px;
+}
+
+  .login-form label,
+  .login-form input {
+    margin: 0 0 0 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+  }
+
+  .login-form button {
+    background: #444444;
+    border: 0 none;
+  }
+
+  .login-form button:hover,
+  .login-form button:focus {
+    background: #333333;
+  }
+
+  .login-form .error {
+    font-size: 12px;
+    line-height: 15px;
+    color: #CC0000;
+  }
+
+form.filters-form {
+
+}
+
+  form.filters-form input,
+  form.filters-form select,
+  form.filters-form select option {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+
+    width: 160px;
+    height: 36px;
+    margin: 0 12px 0 0;
+
+    text-align: center;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+table.table-transactions {
+  font-size: 12px;
+}
+
+  table.table-transactions thead th {
+    font-weight: 500;
+  }
+
+  table.table-transactions tbody td {
+    font-weight: 300;
+  }
+
+#transactionModal .modal-title {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+#transactionModal .modal-body {
+  font-weight: 300;
+  font-size: 14px;
+}
